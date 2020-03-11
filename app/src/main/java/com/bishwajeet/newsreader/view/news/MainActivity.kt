@@ -1,7 +1,8 @@
-package com.bishwajeet.newsreader
+package com.bishwajeet.newsreader.view.news
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.bishwajeet.newsreader.R
 
 class MainActivity : AppCompatActivity() {
 
