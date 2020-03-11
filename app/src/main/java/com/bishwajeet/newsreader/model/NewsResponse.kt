@@ -1,4 +1,12 @@
 package com.bishwajeet.newsreader.model
+import com.google.gson.annotations.SerializedName
 
-class NewsResponse {
-}
+
+data class NewsResponse(
+    @SerializedName("status")
+    val status: String = "",
+    @SerializedName("totalResults")
+    val totalResults: Int = 0,
+    @SerializedName("articles")
+    val articles: List<Article> = listOf()
+)
