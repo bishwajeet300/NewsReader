@@ -21,7 +21,7 @@ class ArticleDataCache(
         }
     }
 
-    fun getRepos(): DataSource.Factory<Int, Article> {
+    fun getArticles(): DataSource.Factory<Int, Article> {
         return articleDAO.getArticles()
     }
 }

@@ -1,6 +1,5 @@
 package com.bishwajeet.newsreader.api
 
-import android.util.Log
 import com.bishwajeet.newsreader.model.Article
 import com.bishwajeet.newsreader.model.NewsResponse
 import retrofit2.Call
@@ -11,22 +10,25 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 
-fun getNewsResponse(service: APIService,
-                    country: String,
-                    apiKey: String,
-                    page: Int,
-                    onSuccess: (repos: List<Article>) -> Unit,
-                    onError: (error: String) -> Unit) {
+fun getNewsResponse(
+    service: APIService,
+    query: String,
+    apiKey: String,
+    page: Int,
+    pageSize: Int,
+    onSuccess: (repos: List<Article>) -> Unit,
+    onError: (error: String) -> Unit
+) {
 
-    service.getNewsResponse(country, apiKey, page).enqueue(
+    service.getNewsResponse(query, apiKey, page, pageSize).enqueue(
         object : Callback<NewsResponse> {
             override fun onFailure(call: Call<NewsResponse>, t: Throwable) {
-                Log.d("NETWORK", "onFailure() -> ${t.message}")
-                onError(t.message ?:"unknown error")
+                println("NETWORK: onFailure() -> ${t.message}")
+                onError(t.message ?: "unknown error")
             }
 
             override fun onResponse(call: Call<NewsResponse>, response: Response<NewsResponse>) {
-                Log.d("NETWORK", "onResponse() -> $response")
+                println("NETWORK: onResponse() -> $response")
                 if (response.isSuccessful) {
                     val news = response.body()?.articles ?: emptyList()
                     onSuccess(news)
@@ -39,17 +41,14 @@ fun getNewsResponse(service: APIService,
 }
 
 
-
-
-
-
 interface APIService {
 
     @GET("top-headlines")
     fun getNewsResponse(
-        @Query(value = "country") country: String,
+        @Query(value = "q") query: String,
         @Query(value = "apiKey") apiKey: String,
-        @Query(value = "page") page: Int
+        @Query(value = "page") page: Int,
+        @Query(value = "pageSize") pageSize: Int
     ): Call<NewsResponse>
 
     companion object Factory {

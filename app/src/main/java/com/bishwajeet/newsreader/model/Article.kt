@@ -20,9 +20,7 @@ data class Article(
     @SerializedName("urlToImage")
     val urlToImage: String? = "",
     @SerializedName("publishedAt")
-    val publishedAt: String = "",
-    @SerializedName("content")
-    val content: String? = ""
+    val publishedAt: String = ""
 ) {
 
 }
