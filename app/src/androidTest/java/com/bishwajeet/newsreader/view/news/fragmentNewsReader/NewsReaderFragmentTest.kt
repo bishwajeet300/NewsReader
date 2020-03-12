@@ -16,7 +16,7 @@ class NewsReaderFragmentTest {
     @Test
     fun testEventFragment() {
         val fragmentArgs = Bundle().apply {
-            putInt("selectedListItem", 0)
+            putString("URL", "https://lifehacker.com/how-to-update-your-super-old-android-so-it-doesnt-get-h-1842157601")
         }
         val scenario = launchFragmentInContainer<NewsReaderFragment>(
             fragmentArgs

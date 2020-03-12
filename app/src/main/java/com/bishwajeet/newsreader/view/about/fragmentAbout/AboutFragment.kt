@@ -8,9 +8,6 @@ import android.view.ViewGroup
 
 import com.bishwajeet.newsreader.R
 
-/**
- * A simple [Fragment] subclass.
- */
 class AboutFragment : Fragment() {
 
     override fun onCreateView(

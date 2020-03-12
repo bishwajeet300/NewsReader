@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bishwajeet.newsreader.R
 import com.bishwajeet.newsreader.model.Article
+import com.bishwajeet.newsreader.utils.DateUtil
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import java.text.ParseException
@@ -57,7 +58,7 @@ class NewsFeedListItemViewHolder(view: View, listener: NewsFeedListener) :
         description.text = article.description
         source.text = article.source.name
         date.text = DateUtils.getRelativeTimeSpanString(
-            getFormattedDate(article.publishedAt),
+            DateUtil().getFormattedDate(article.publishedAt),
             System.currentTimeMillis(),
             DateUtils.HOUR_IN_MILLIS,
             DateUtils.FORMAT_ABBREV_RELATIVE
@@ -73,17 +74,6 @@ class NewsFeedListItemViewHolder(view: View, listener: NewsFeedListener) :
             .into(image)
     }
 
-    private fun getFormattedDate(publishedAt: String): Long {
-        return try {
-            val sdf = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssz", Locale.getDefault())
-            @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS") val date: Date = sdf.parse(publishedAt)
-            val startDate: Long = date.time
-            startDate
-        } catch (e: ParseException) {
-            e.printStackTrace()
-            System.currentTimeMillis()
-        }
-    }
 
 
     companion object {

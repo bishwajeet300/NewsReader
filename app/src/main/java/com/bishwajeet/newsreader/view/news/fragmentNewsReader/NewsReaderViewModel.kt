@@ -19,6 +19,11 @@ class NewsReaderViewModel @Inject constructor(): ViewModel() {
 
 
     fun saveUrl(url: String?) {
-        _url.value = url
+
+        if (url != null) {
+            if(url.contains("http:")) {
+                _url.value = url.replace("http:", "https:")
+            }
+        }
     }
 }
