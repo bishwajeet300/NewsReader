@@ -4,8 +4,9 @@ import androidx.paging.LivePagedListBuilder
 import com.bishwajeet.newsreader.api.APIService
 import com.bishwajeet.newsreader.db.ArticleDataCache
 import com.bishwajeet.newsreader.model.ArticleResult
+import javax.inject.Inject
 
-class NewsRepository(
+class NewsRepository @Inject constructor(
     private val network: APIService,
     private val local: ArticleDataCache
 ) {

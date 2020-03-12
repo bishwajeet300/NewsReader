@@ -44,7 +44,7 @@ class NewsBoundaryCallback(
 
         isRequestInProgress = true
 
-        getNewsResponse(network, "android", "05dc83fa047b45399fa2632af32f4a2b", lastRequestedPage, NETWORK_PAGE_SIZE, { articles ->
+        getNewsResponse(network, "technology", "05dc83fa047b45399fa2632af32f4a2b", lastRequestedPage, NETWORK_PAGE_SIZE, { articles ->
             if (articles.isNotEmpty()) {
                 local.insert(articles) {
                     lastRequestedPage++

@@ -1,4 +1,6 @@
 package com.bishwajeet.newsreader.view.about.fragmentAbout
 
-class AboutViewModel {
+import androidx.lifecycle.ViewModel
+
+class AboutViewModel: ViewModel() {
 }

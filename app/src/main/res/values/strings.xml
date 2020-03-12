@@ -1,9 +1,11 @@
 <resources>
     <string name="app_name">NewsReader</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="about_app">NewsReader app works on Model-View-ViewModel architectural pattern. It helps to cleanly separate the business and presentation logic of the application from its user interface (UI). Maintaining a clean separation between application logic and the UI helps to address numerous development issues and can make an application easier to test, maintain, and evolve.
+Various other design patterns, e.g., Dependency Injection (Dagger2), Factory Pattern (ViewModeFactory), Builders (Retrofit Builder) have been used. Since GitHub Repo app accesses data from multiple sources, Repository pattern is being used. Repositories are classes or components that encapsulate the logic required to access multiple data sources.
+</string>
     <string name="news_feed">News Feed</string>
     <string name="about">About NewsReader</string>
     <string name="news_reader">News Reader</string>
+    <string name="news_image">News Image</string>
+    <string name="loading">Loading</string>
 </resources>

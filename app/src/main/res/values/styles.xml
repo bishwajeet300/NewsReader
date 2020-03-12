@@ -8,4 +8,46 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="TextStyleHeading" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/textTitle</item>
+        <item name="android:textSize">@dimen/text_heading</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:fontFamily">@font/raleway_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:includeFontPadding">true</item>
+        <item name="android:lineSpacingExtra">0.5dp</item>
+    </style>
+
+    <style name="TextStyleTitle" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/textTitle</item>
+        <item name="android:textSize">@dimen/text_large</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:fontFamily">@font/raleway_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:includeFontPadding">true</item>
+        <item name="android:lineSpacingExtra">0.5dp</item>
+    </style>
+
+
+    <style name="TextStyleSubTitle" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/textTitle</item>
+        <item name="android:textSize">@dimen/text_medium</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:fontFamily">@font/raleway_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:includeFontPadding">true</item>
+        <item name="android:lineSpacingExtra">0.5dp</item>
+    </style>
+
+    <style name="TextStyleContent" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/textContent</item>
+        <item name="android:textSize">@dimen/text_medium</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:fontFamily">@font/raleway_medium</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:includeFontPadding">true</item>
+        <item name="android:lineSpacingExtra">0.5dp</item>
+    </style>
+
+
 </resources>

@@ -43,7 +43,7 @@ fun getNewsResponse(
 
 interface APIService {
 
-    @GET("top-headlines")
+    @GET("everything")
     fun getNewsResponse(
         @Query(value = "q") query: String,
         @Query(value = "apiKey") apiKey: String,
@@ -53,7 +53,7 @@ interface APIService {
 
     companion object Factory {
 
-        private const val BASE_URL = "http://newsapi.org/v2/"
+        private const val BASE_URL = "https://newsapi.org/v2/"
 
         fun create(): APIService {
 
