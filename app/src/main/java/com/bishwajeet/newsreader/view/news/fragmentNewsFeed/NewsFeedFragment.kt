@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
 import com.bishwajeet.newsreader.NewReaderApp
 import com.bishwajeet.newsreader.R
 import com.bishwajeet.newsreader.model.Article
+import com.bishwajeet.newsreader.utils.ColumnSpanUtil
 import com.bishwajeet.newsreader.view.news.fragmentNewsFeed.helper.NewsFeedAdapter
 import com.bishwajeet.newsreader.view.news.fragmentNewsFeed.helper.NewsFeedListener
 import kotlinx.android.synthetic.main.fragment_news_feed.view.*
@@ -59,7 +60,7 @@ class NewsFeedFragment : Fragment(), NewsFeedListener {
 
         manager.spanSizeLookup = object : SpanSizeLookup() {
             override fun getSpanSize(position: Int): Int {
-                return viewModel.getColumnSpan(position, resources.configuration.orientation, Configuration.ORIENTATION_LANDSCAPE)
+                return ColumnSpanUtil().getColumnSpan(position, resources.configuration.orientation, Configuration.ORIENTATION_LANDSCAPE)
             }
         }
 
